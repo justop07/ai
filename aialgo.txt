@@ -1,0 +1,94 @@
+Algorithms
+
+1)
+1. Start with the initial state.
+ 2. Place it in a queue (frontier).
+ 3. While the queue is not empty:
+•	Dequeue a state.
+•	If it matches the goal state → Success.
+•	Otherwise, generate all possible child states by moving the blank space.
+•	Add unexplored states to the queue.
+ 4. Repeat until a solution is found or the queue is empty
+
+
+2)
+1.Backtracking explores all possible permutations of cities but prunes branches that cannot yield
+ a better solution than the current best.
+ 2.Works recursively:
+ a.Start from a city.
+ b. Visit an unvisited city and add its cost.
+ c.Repeat until all cities are visited.
+ d. Return to the start city and update the minimum cost if the new path is better
+
+
+3)
+1. Initialize the open list with the start node (priority queue). 
+2. Initialize an empty closed set (visited nodes). 
+3. While the open list is not empty: 
+○ Remove the node with the lowest f(n). 
+○ If it is the goal node, return the path and cost. 
+○ Otherwise, expand its neighbors, calculate new g(n) and f(n), and add them to the 
+open list. 
+4. If the open list becomes empty without reaching the goal → no solution exists.
+
+
+5)
+1. Generate a random initial path (solution). 
+2. Compute the cost of the current path. 
+3. Generate neighbors by swapping cities in the path. 
+4. Select the neighbor with the minimum cost (steepest improvement). 
+5. If the neighbor is better, move to it; otherwise, stop. 
+6. Return the best path found.
+
+
+7)
+1. Choose the number of neighbors, k. 
+2. Calculate the distance between the test data and all training samples. 
+3. Select the k nearest neighbors. 
+4. Assign the class that is most frequent among the neighbors.
+
+
+8)
+● The root node represents the entire dataset. 
+● The dataset is split based on the best attribute chosen using measures such as: 
+○ Entropy (for Information Gain) 
+○ Gini Index 
+● The process continues recursively until all data points belong to a single class or no 
+further split improves performance. 
+● The final leaves represent class labels (e.g., Setosa, Versicolor, Virginica).
+
+
+9)
+The algorithm starts with a goal (query) that needs to be proved.  
+● It looks for rules that can conclude that goal. 
+● For each rule found, it recursively tries to prove all premises (conditions). 
+● If all premises can be proved (either directly from facts or by other rules), the goal is 
+proved true. 
+● If not, the goal cannot be proved.
+
+
+10)
+Algorithm Bayesian_Network_Heart_Disease:
+
+1. Load the dataset into memory.
+
+2. Preprocess the data:
+        - Convert target into binary (0/1)
+        - Select required attributes
+        - Discretize continuous variables (age, cholesterol, bp)
+
+3. Define the Bayesian Network structure:
+        - Specify parent → child relationships
+
+4. Train the BN model using:
+        Maximum Likelihood Estimation (MLE)
+
+5. Perform probabilistic inference using:
+        Variable Elimination
+
+6. Query the network for probabilities:
+        Example:
+            P(Heart Disease | High Cholesterol)
+            P(Heart Disease | Chest Pain, High FBS)
+
+7. Display results.
